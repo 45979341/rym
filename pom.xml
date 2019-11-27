@@ -156,6 +156,12 @@
 			<artifactId>zookeeper</artifactId>
 			<version>3.4.7</version>
 		</dependency>
+
+		<!-- mq-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-amqp</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>
