@@ -15,7 +15,7 @@ import java.util.Map;
  * @author 刘欣武
  * @version $Id: APIUtil, v 0.1 2019/3/25 14:26 刘欣武 Exp$
  */
-//@Component
+@Component
 public class APIUtil {
 
     @Resource
