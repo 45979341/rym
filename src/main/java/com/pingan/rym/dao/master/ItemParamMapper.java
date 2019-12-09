@@ -30,4 +30,9 @@ public interface ItemParamMapper {
     })
     @ResultMap("item")
     List<ItemParamDTO2> getItemParamsList();
+
+//    @Insert("INSERT INTO monitor_alarm_info(id,device_id,train_code,manufactor,cc_str,alarm_type,alarm_event,work_condition,alarm_chn,driver_id,vice_driver_id,start_time,end_time,alarm_time,gps_lng,gps_tidu,analyze_status,audit_status,audit_opinion,create_time,remark) " +
+//            "VALUES (null,#{deviceId},#{trainCode},#{manufactor},#{ccStr},#{alarmType},#{alarmEvent},#{workCondition},#{alarmChn},#{driverId},#{viceDriverId},#{startTime},#{endTime},#{alarmTime},#{gpsLng},#{gpsTidu},#{analyzeStatus},#{auditStatus},#{auditOpinion},now(),#{remark})")
+//    @SelectKey(statement="SELECT LAST_INSERT_ID()", keyProperty="id", before=false, resultType=Integer.class)
+//    Integer insertAlarmInfo(MonitorAlarmInfo monitorAlarmInfo);
 }
