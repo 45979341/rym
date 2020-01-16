@@ -39,7 +39,7 @@ public class APIUtil {
 
     public String sendPostRequest(String url,Map<String,String> params){
         HttpHeaders httpHeaders = new HttpHeaders();
-        httpHeaders.setContentType(MediaType.APPLICATION_JSON_UTF8);
+        httpHeaders.setContentType(MediaType.APPLICATION_JSON_UTF8);//服务器接受参数类型不同，这个值会需要改
         MultiValueMap<String, String> paramsR = new LinkedMultiValueMap<>();
         params.keySet().forEach(item->{
             paramsR.add(item,params.get(item));
