@@ -32,7 +32,7 @@ public class RedisLock {
         if (!StringUtils.isEmpty(currentValue) && Long.parseLong(currentValue) < System.currentTimeMillis()) {
             //获取上一个锁的时间，锁过期后，GETSET将原来的锁替换成新锁
             String oldValue = redisTemplate.opsForValue().getAndSet(key, value);
-            if (!StringUtils.isEmpty(oldValue) && oldValue.equals(currentValue)) {
+            if (StringUtils.isEmpty(oldValue) || oldValue.equals(currentValue)) {
                 return true;
             }
         }
