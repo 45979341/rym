@@ -1,6 +1,7 @@
 package com.pingan.rym.dao.master;
 
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.pingan.rym.dto.ItemParamDTO;
 import com.pingan.rym.dto.ItemParamDTO2;
 import org.apache.ibatis.annotations.*;
@@ -23,13 +24,18 @@ public interface ItemParamMapper {
     ItemParamDTO getOne(Integer id);
 
     @Select("select * from tb_item_param_group")
-    @Results(id="item",value = {
+    @Results(id="ite",value = {
             @Result(property = "id",column ="id" ,jdbcType =JdbcType.INTEGER),
             @Result(property = "groupName",column ="group_name" ,jdbcType =JdbcType.VARCHAR),
             @Result(property = "itemCatId",column ="item_cat_id" ,jdbcType =JdbcType.VARCHAR)
     })
-    @ResultMap("item")
+    @ResultType(ItemParamDTO2.class)
     List<ItemParamDTO2> getItemParamsList();
+
+    @Select("select * from tb_item_param_group")
+    @ResultMap("ite")
+    List<ItemParamDTO2> getItemParamsListFuck();
+
 
 //    @Insert("INSERT INTO monitor_alarm_info(id,device_id,train_code,manufactor,cc_str,alarm_type,alarm_event,work_condition,alarm_chn,driver_id,vice_driver_id,start_time,end_time,alarm_time,gps_lng,gps_tidu,analyze_status,audit_status,audit_opinion,create_time,remark) " +
 //            "VALUES (null,#{deviceId},#{trainCode},#{manufactor},#{ccStr},#{alarmType},#{alarmEvent},#{workCondition},#{alarmChn},#{driverId},#{viceDriverId},#{startTime},#{endTime},#{alarmTime},#{gpsLng},#{gpsTidu},#{analyzeStatus},#{auditStatus},#{auditOpinion},now(),#{remark})")

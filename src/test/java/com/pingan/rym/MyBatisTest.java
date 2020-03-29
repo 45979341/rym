@@ -46,7 +46,7 @@ public class MyBatisTest {
     private ItemParamMapper itemParamMapper;
     @Test
     public void testA(){
-        List<ItemParamDTO2> list = itemParamMapper.getItemParamsList();
+        List<ItemParamDTO2> list = itemParamMapper.getItemParamsListFuck();
         list.stream().forEach(dto->System.out.println(dto.getGroupName()));
     }
 
